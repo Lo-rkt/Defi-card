@@ -5,24 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
     <title>Personal Card</title>
 </head>
 <body>
+    <div class="glow-bg">
+        <div class="glow-ball glow1"></div>
+        <div class="glow-ball glow2"></div>
+    </div>
     <div class="card">
-        <p class="subtile">Petit défi de la semaine</p>
-        <img src="#" alt="photo de Loic en pull jaune et lunettes" class="photo">
+        <div class="subtile">
+            <img src="./img/potion.svg" alt="potion" class="potion">
+            <span>Petit défi de la semaine</span>
+        </div>  
+        <img src="/img/img.png" class="photo" alt="photo de Loic en pull jaune et lunettes" >
         <h1>Salut, je suis Loïc</h1>
-        <p class="description">Je suis autodidact et passioné en developement web.</p>
+        <p class="description">Autodidact, passionné en developement web et graphique design.</p>
         <div class="tags">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
             <span class="tag">JavaScript</span>
             <span class="tag">React</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">Canva</span>
         </div>
         <p class="extra">j'aimerai apprendre un peut plus sur les developpements backend</p>
-        <button type="submit"><a href="https://github.com/Lo-rkt">Voir mon github</a></button>
+        <a href="https://github.com/Lo-rkt">Voir mon github</a>
     </div>
 </body>
+<script>
+function randomPosition(ball, size = 600) {
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const left = Math.random() * (vw - size);
+    const top = Math.random() * (vh - size);
+    ball.style.left = left + "px";
+    ball.style.top = top + "px";
+}
+
+function animateBall(ball, size, duration) {
+    randomPosition(ball, size);
+    setInterval(() => {
+        randomPosition(ball, size);
+    }, duration);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const ball1 = document.querySelector('.glow1');
+    const ball2 = document.querySelector('.glow2');
+    animateBall(ball1, 600, 20000); // 20s
+    animateBall(ball2, 500, 30000); // 30s
+});
+</script>
 </html>
