@@ -33,28 +33,4 @@
         <a href="https://github.com/Lo-rkt">Voir mon github</a>
     </div>
 </body>
-<script>
-function randomPosition(ball, size = 600) {
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
-    const left = Math.random() * (vw - size);
-    const top = Math.random() * (vh - size);
-    ball.style.left = left + "px";
-    ball.style.top = top + "px";
-}
-
-function animateBall(ball, size, duration) {
-    randomPosition(ball, size);
-    setInterval(() => {
-        randomPosition(ball, size);
-    }, duration);
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    const ball1 = document.querySelector('.glow1');
-    const ball2 = document.querySelector('.glow2');
-    animateBall(ball1, 600, 20000); // 20s
-    animateBall(ball2, 500, 30000); // 30s
-});
-</script>
 </html>
